@@ -78,17 +78,6 @@ M.gitsigns = {
   }
 }
 
-M.telescope = {
-  n = {
-    ["<leader>tgs"] = {
-      function()
-        require('telescope.builtin').git_status()
-      end,
-      desc = "Telescope Git Status"
-    },
-  },
-}
-
 M.goto_preview = {
   n = {
     ["gtd"] = {
