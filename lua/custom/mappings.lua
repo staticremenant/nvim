@@ -107,21 +107,4 @@ M.goto_preview = {
   },
 }
 
-M.noice = {
-  n = {
-    ["<leader>Nh"] = {
-      function()
-        require("noice").cmd("history")
-      end,
-      desc = "Show Noice message history"
-    },
-    ["<leader>Nd"] = {
-      function()
-        require("noice").cmd("dismiss")
-      end,
-      desc = "Dismiss all Noice notifications"
-    },
-  },
-}
-
 return M
