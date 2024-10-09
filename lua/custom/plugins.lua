@@ -32,7 +32,7 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     config = function()
-      require("telescope").setup{}
+      require("telescope").setup {}
     end,
     init = function()
       require("core.utils").load_mappings("telescope")
@@ -50,8 +50,8 @@ local plugins = {
   },
   {
     "lewis6991/gitsigns.nvim",
-    init = function ()
-     require("core.utils").load_mappings("gitsigns")
+    init = function()
+      require("core.utils").load_mappings("gitsigns")
     end
   },
   {
@@ -79,6 +79,9 @@ local plugins = {
     config = function()
       require("custom.configs.noice").setup()
     end,
+  },
+  {
+    require("custom.configs.quit").setup()
   },
 }
 return plugins
