@@ -69,22 +69,8 @@ local plugins = {
       require('custom.configs.goto-preview').setup()
     end,
   },
-<<<<<<< HEAD
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
-    config = function()
-      require("custom.configs.noice").setup()
-    end,
-  },
   {
     require("custom.configs.quit").setup()
   },
-=======
->>>>>>> 548ff2d (removed noice)
 }
 return plugins
