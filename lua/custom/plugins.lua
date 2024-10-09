@@ -42,11 +42,11 @@ local plugins = {
     end,
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    ft = "go",
-    opts = function ()
-      return require "custom.configs.null-ls"
+    "stevearc/conform.nvim",
+    config = function()
+      require("custom.configs.conform").setup()
     end,
+    event = "VeryLazy",
   },
   {
     "lewis6991/gitsigns.nvim",
