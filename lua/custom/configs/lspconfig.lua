@@ -26,12 +26,17 @@ local custom_on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd("CursorHold", {
       group = group_name,
       buffer = bufnr,
-      callback = vim.lsp.buf.document_highlight,
+      callback = function()
+        vim.schedule(vim.lsp.buf.document_highlight)
+      end,
     })
+
     vim.api.nvim_create_autocmd("CursorMoved", {
       group = group_name,
       buffer = bufnr,
-      callback = vim.lsp.buf.clear_references,
+      callback = function()
+        vim.schedule(vim.lsp.buf.clear_references)
+      end,
     })
   end
 
@@ -50,6 +55,16 @@ lspconfig.gopls.setup {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  handlers = {
+    ["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
+      if result.diagnostics == nil then
+        return
+      end
+      config = config or {}
+      config.virtual_text = false
+      vim.lsp.diagnostic.on_publish_diagnostics(_, result, ctx, config)
+    end,
+  },
 }
 
 lspconfig.pbls.setup {
