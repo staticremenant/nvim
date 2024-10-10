@@ -8,7 +8,7 @@ M.dap = {
       "Add breakpoint at line"
     },
     ["<leader>dus"] = {
-      function ()
+      function()
         local widgets = require('dap.ui.widgets');
         local sidebar = widgets.sidebar(widgets.scopes);
         sidebar.open();
@@ -22,13 +22,13 @@ M.dap_go = {
   plugin = true,
   n = {
     ["<leaderdgt>"] = {
-      function ()
+      function()
         require('dap-go').debug_test()
       end,
       "Debug go test"
     },
     ["<leader>dgl"] = {
-      function ()
+      function()
         require('dap-go').debug_last()
       end,
       "Debug last go test"
@@ -45,37 +45,6 @@ M.go = {
       desc = "Go Format (goimports)"
     },
   },
-}
-
-M.gitsigns = {
-  plugin = true,
-  n = {
-    ["<leader>gd"] = {
-      function()
-        vim.g.previous_git_diff_buf = vim.api.nvim_get_current_buf()
-        require('gitsigns').diffthis()
-      end,
-      "Show git diff"
-    },
-    ["<leader>gq"] = {
-      function()
-        local initial_buf = vim.g.previous_git_diff_buf
-        for _, win in ipairs(vim.api.nvim_list_wins()) do
-          local buf = vim.api.nvim_win_get_buf(win)
-          local bufname = vim.api.nvim_buf_get_name(buf)
-          local is_modified = vim.bo[buf].modified
-          if buf ~= initial_buf and not bufname:match("NvimTree_") and not is_modified then
-            vim.api.nvim_win_close(win, false)
-          end
-        end
-
-        if vim.api.nvim_buf_is_valid(initial_buf) then
-          vim.api.nvim_set_current_buf(initial_buf)
-        end
-      end,
-      "Close git diff"
-    },
-  }
 }
 
 M.goto_preview = {
@@ -103,6 +72,29 @@ M.goto_preview = {
         require('goto-preview').close_all_win()
       end,
       desc = "Close All Preview Windows"
+    },
+  },
+}
+
+M.nvterm = {
+  plugin = true,
+  n = {
+    ["<leader>h"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal terminal"
+    },
+  }
+}
+
+M.telescope = {
+  n = {
+    ["<leader>Tgs"] = {
+      function()
+        require('telescope.builtin').git_status()
+      end,
+      desc = "Telescope Git Status"
     },
   },
 }
