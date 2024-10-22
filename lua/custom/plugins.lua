@@ -32,13 +32,16 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     config = function()
-      require("telescope").setup {}
+      require("telescope").setup {
+        pickers = {
+          find_files = {
+            theme = "ivy",
+          }
+        },
+      }
     end,
     init = function()
       require("core.utils").load_mappings("telescope")
-      vim.api.nvim_create_user_command('Tlg', function()
-        require('telescope.builtin').live_grep()
-      end, { desc = "Run Telescope live_grep" })
     end,
   },
   {

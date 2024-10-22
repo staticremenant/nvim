@@ -10,6 +10,7 @@ local default_plugins = {
     build = function()
       require("base46").load_all_highlights()
     end,
+    lazy = false,
   },
 
   {
@@ -25,6 +26,10 @@ local default_plugins = {
     end,
     config = function(_, opts)
       require "base46.term"
+      opts.terminals = opts.terminals or {}
+      opts.terminals.type_opts = opts.terminals.type_opts or {}
+      opts.terminals.type_opts.horizontal = opts.terminals.type_opts.horizontal or {}
+      opts.terminals.type_opts.horizontal.split_ratio = 0.4
       require("nvterm").setup(opts)
     end,
   },
@@ -34,12 +39,8 @@ local default_plugins = {
     event = "User FilePost",
     config = function(_, opts)
       require("colorizer").setup(opts)
-
-      -- execute colorizer as soon as possible
-      vim.defer_fn(function()
-        require("colorizer").attach_to_buffer(0)
-      end, 0)
     end,
+    lazy = false,
   },
 
   {
@@ -249,12 +250,5 @@ if #config.plugins > 0 then
   table.insert(default_plugins, { import = config.plugins })
 end
 
--- This autocommand sets the terminal height to 20 lines whenever a terminal is opened.
-vim.api.nvim_create_autocmd("TermOpen", {
-  pattern = "term://*",
-  callback = function()
-    vim.cmd("resize 20")
-  end,
-})
-
 require("lazy").setup(default_plugins, config.lazy_nvim)
+require("base46").load_all_highlights()

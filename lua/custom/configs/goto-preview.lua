@@ -11,7 +11,7 @@ M.setup = function()
     resizing_mappings = false,
     post_open_hook = nil,
     references = {
-      telescope = require("telescope.themes").get_dropdown({ hide_preview = false })
+      telescope = require("telescope.themes").get_ivy({ hide_preview = false })
     },
     focus_on_open = true,
   }

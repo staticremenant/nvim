@@ -88,15 +88,4 @@ M.nvterm = {
   }
 }
 
-M.telescope = {
-  n = {
-    ["<leader>Tgs"] = {
-      function()
-        require('telescope.builtin').git_status()
-      end,
-      desc = "Telescope Git Status"
-    },
-  },
-}
-
 return M
