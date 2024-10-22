@@ -21,13 +21,15 @@ local plugins = {
       vim.api.nvim_set_hl(0, 'DapStoppedNum', { fg = '#77dd77' })
 
       vim.fn.sign_define('DapBreakpoint', {
-        text = '󰫢',
+        -- text = '󰫢',
+        text = '󰃤',
         texthl = 'DapBreakpointColor',
         linehl = '',
         numhl = 'DapBreakpointNum',
       })
       vim.fn.sign_define('DapStopped', {
-        text = '󰋇',
+        -- text = '󰋇',
+        text = '󰜴',
         texthl = 'DapStoppedColor',
         linehl = '',
         numhl = 'DapStoppedNum',
@@ -60,12 +62,12 @@ local plugins = {
               { id = "watches",     size = 0.25 },
             },
             size = 40,
-            position = "right",
+            position = "left",
           },
           {
             elements = {
               "repl",
-              "console",
+              -- "console",
             },
             size = 10,
             position = "bottom",
