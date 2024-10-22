@@ -68,7 +68,10 @@ M.go = {
   n = {
     ["<leader>gf"] = {
       function()
-        require('go.format').goimport()
+        require("conform").format({
+          async = true,
+          formatters = { "goimports" },
+        })
       end,
       desc = "Go Format (goimports)"
     },

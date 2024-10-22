@@ -29,7 +29,7 @@ local default_plugins = {
       opts.terminals = opts.terminals or {}
       opts.terminals.type_opts = opts.terminals.type_opts or {}
       opts.terminals.type_opts.horizontal = opts.terminals.type_opts.horizontal or {}
-      opts.terminals.type_opts.horizontal.split_ratio = 0.4
+      opts.terminals.type_opts.horizontal.split_ratio = 0.37
       require("nvterm").setup(opts)
     end,
   },

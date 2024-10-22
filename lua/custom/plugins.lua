@@ -14,10 +14,24 @@ local plugins = {
       require("core.utils").load_mappings("dap")
     end,
     config = function()
-      vim.api.nvim_set_hl(0, 'DapBreakpointColor', { fg = '#a6ffbf' })
-      vim.api.nvim_set_hl(0, 'DapStoppedColor', { fg = '#a6ffbf' })
-      vim.fn.sign_define('DapBreakpoint', { text = '󰫢', texthl = 'DapBreakpointColor', linehl = '', numhl = '' })
-      vim.fn.sign_define('DapStopped', { text = '󰋇', texthl = 'DapStoppedColor', linehl = '', numhl = '' })
+      vim.api.nvim_set_hl(0, 'DapBreakpointColor', { fg = '#e4717a' })
+      vim.api.nvim_set_hl(0, 'DapBreakpointNum', { fg = '#e4717a' })
+
+      vim.api.nvim_set_hl(0, 'DapStoppedColor', { fg = '#77dd77' })
+      vim.api.nvim_set_hl(0, 'DapStoppedNum', { fg = '#77dd77' })
+
+      vim.fn.sign_define('DapBreakpoint', {
+        text = '󰫢',
+        texthl = 'DapBreakpointColor',
+        linehl = '',
+        numhl = 'DapBreakpointNum',
+      })
+      vim.fn.sign_define('DapStopped', {
+        text = '󰋇',
+        texthl = 'DapStoppedColor',
+        linehl = '',
+        numhl = 'DapStoppedNum',
+      })
       require('nvim-dap-virtual-text').setup()
     end,
   },
