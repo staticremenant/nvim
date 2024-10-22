@@ -12,21 +12,76 @@ local plugins = {
     "mfussenegger/nvim-dap",
     init = function()
       require("core.utils").load_mappings("dap")
+    end,
+    config = function()
+      vim.api.nvim_set_hl(0, 'DapBreakpointColor', { fg = '#a6ffbf' })
+      vim.api.nvim_set_hl(0, 'DapStoppedColor', { fg = '#a6ffbf' })
+      vim.fn.sign_define('DapBreakpoint', { text = '󰫢', texthl = 'DapBreakpointColor', linehl = '', numhl = '' })
+      vim.fn.sign_define('DapStopped', { text = '󰋇', texthl = 'DapStoppedColor', linehl = '', numhl = '' })
+      require('nvim-dap-virtual-text').setup()
+    end,
+  },
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+    end,
+  },
+  {
+    "nvim-neotest/nvim-nio"
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    config = function()
+      require("dapui").setup({
+        layouts = {
+          {
+            elements = {
+              { id = "scopes",      size = 0.25 },
+              { id = "breakpoints", size = 0.25 },
+              { id = "stacks",      size = 0.25 },
+              { id = "watches",     size = 0.25 },
+            },
+            size = 40,
+            position = "right",
+          },
+          {
+            elements = {
+              "repl",
+              "console",
+            },
+            size = 10,
+            position = "bottom",
+          },
+        },
+      })
+      local dap, dapui = require('dap'), require('dapui')
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
     end
+  },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      require("nvim-dap-virtual-text").setup()
+    end,
   },
   {
     "neovim/nvim-lspconfig",
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-    end,
-  },
-  {
-    "dreamsofcode-io/nvim-dap-go",
-    ft = "go",
-    dependencies = "mfussenegger/nvim-dap",
-    config = function(_, opts)
-      require("dap-go").setup(opts)
     end,
   },
   {
