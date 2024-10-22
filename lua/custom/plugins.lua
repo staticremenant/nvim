@@ -14,26 +14,34 @@ local plugins = {
       require("core.utils").load_mappings("dap")
     end,
     config = function()
-      vim.api.nvim_set_hl(0, 'DapBreakpointColor', { fg = '#e4717a' })
-      vim.api.nvim_set_hl(0, 'DapBreakpointNum', { fg = '#e4717a' })
-
-      vim.api.nvim_set_hl(0, 'DapStoppedColor', { fg = '#77dd77' })
-      vim.api.nvim_set_hl(0, 'DapStoppedNum', { fg = '#77dd77' })
+      vim.api.nvim_set_hl(0, 'DapBreakpointColor', { fg = '#7FC7FF' })
+      vim.api.nvim_set_hl(0, 'DapStoppedColor', { fg = '#DCD0FF' })
+      vim.api.nvim_set_hl(0, 'DapBreakpointRejectedColor', { fg = '#FFE5B4' })
 
       vim.fn.sign_define('DapBreakpoint', {
-        -- text = '󰫢',
-        text = '󰃤',
+        text = '',
         texthl = 'DapBreakpointColor',
         linehl = '',
-        numhl = 'DapBreakpointNum',
+        numhl = 'DapBreakpointColor',
       })
       vim.fn.sign_define('DapStopped', {
-        -- text = '󰋇',
-        text = '󰜴',
+        text = '󰈈',
         texthl = 'DapStoppedColor',
         linehl = '',
-        numhl = 'DapStoppedNum',
+        numhl = 'DapStoppedColor',
       })
+      vim.fn.sign_define('DapBreakpointRejected', {
+        text = '',
+        texthl = 'DapBreakpointColor',
+        linehl = '',
+        numhl = 'DapBreakpointColor',
+      })
+      -- vim.fn.sign_define('DapBreakpointRejected', {
+      --   text = '󱂼',
+      --   texthl = 'DapBreakpointRejectedColor',
+      --   linehl = '',
+      --   numhl = 'DapBreakpointRejectedColor',
+      -- })
       require('nvim-dap-virtual-text').setup()
     end,
   },

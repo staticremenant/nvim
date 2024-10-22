@@ -1,5 +1,14 @@
 local M = {}
 
+local function nvim_tree_toggle_with_delay()
+  local api = require('nvim-tree.api')
+  if api.tree.is_visible() then
+    api.tree.close()
+  else
+    api.tree.open()
+  end
+end
+
 M.dap = {
   plugin = true,
   n = {
@@ -10,6 +19,9 @@ M.dap = {
     ["<leader>dss"] = {
       function()
         require('dapui').toggle()
+        vim.defer_fn(function()
+          nvim_tree_toggle_with_delay()
+        end, 50)
       end,
       "Toggle debugging sidebar (dap-ui)"
     },
@@ -40,6 +52,11 @@ M.dap = {
     ["<leader>dq"] = {
       function()
         require('dap').terminate()
+        local api = require('nvim-tree.api')
+        api.tree.close()
+        vim.defer_fn(function()
+          api.tree.open()
+        end, 50)
       end,
       "Terminate debugging"
     }
