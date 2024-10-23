@@ -1,7 +1,7 @@
 ## :key: Hotkeys config
 :warning: Not all hotkeys are listed here, but the most useful ones are.
 
-### :mag_right: code/navigation
+### :mag_right: Code / Navigation
 
 | Shortcut     | Action                        |
 |--------------|-------------------------------|
@@ -21,7 +21,7 @@
 | `<leader>h`  | toggle horizontal terminal    |
 | `C-n`        | toggle nvim-tree              |
 
-### :gear: debug
+### :gear: Debug
 
 | Shortcut      | Action                        |
 |---------------|-------------------------------|
@@ -30,7 +30,7 @@
 | `<leader>dss` | debug show sidebar            |
 | `<leader>dq`  | debug quit                    |
 
-### :octocat: git
+### :octocat: Git
 
 | Shortcut     | Action                        |
 |--------------|-------------------------------|
@@ -43,7 +43,7 @@
 | `cb`         | conflict choose both          |
 | `c0`         | conflict choose none          |
 
-### :wrench: additional commands/shortcuts
+### :wrench: Additional commands/shortcuts
 
 | Shortcut     | Action                         |
 |--------------|--------------------------------|
