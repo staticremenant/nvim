@@ -110,11 +110,11 @@ M.nvterm = {
 M.git_conflict = {
   plugin = true,
   n = {
-    ["<leader>cn"] = {
+    ["cn"] = {
       "<Plug>(git-conflict-next-conflict)",
       "Next conflict"
     },
-    ["<leader>cp"] = {
+    ["cp"] = {
       "<Plug>(git-conflict-prev-conflict)",
       "Previous conflict"
     },

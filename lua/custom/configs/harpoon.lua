@@ -13,7 +13,7 @@ function M.setup()
 
   vim.keymap.set('n', '<leader>ca', function()
     require("harpoon.mark").cler_all()
-  end, { desc = "Clears all buffers in Harpoon" })
+  end, { desc = "Clear all buffers in Harpoon" })
 
   vim.keymap.set('n', '<leader>1', function()
     require("harpoon.ui").nav_file(1)
