@@ -35,8 +35,8 @@
 |--------------|-------------------------------|
 | `<leader>gt` | git status (changes)          |
 | `<leader>cm` | git commits                   |
-| `cn`         | conflict next                 |
-| `cp`         | conflict previous             |
+| `[x`         | conflict next                 |
+| `]x`         | conflict previous             |
 | `co`         | conflict choose ours          |
 | `ct`         | conflict choose theirs        |
 | `cb`         | conflict choose both          |

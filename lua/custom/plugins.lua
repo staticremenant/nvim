@@ -162,6 +162,7 @@ local plugins = {
   {
     'akinsho/git-conflict.nvim',
     version = "*",
+    event = "BufEnter",
     config = function()
       require('git-conflict').setup(
         {
