@@ -47,3 +47,4 @@
 | Shortcut   | Action                         |
 |------------|--------------------------------|
 | :Q         | close all buffers/tabs/windows |
+| <leader>th | change color theme             |
