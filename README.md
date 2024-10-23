@@ -1,4 +1,4 @@
-## :wrench: Hotkeys config
+## :key: Hotkeys config
 
 ### :mag_right: code/navigation
 
@@ -37,12 +37,12 @@
 | <leader>cm | git commits                   |
 | cn         | conflict next                 |
 | cp         | conflict previous             |
-| co         | choose ours                   |
-| ct         | choose theirs                 |
-| cb         | choose both                   |
-| c0         | choose none                   |
+| co         | conflict choose ours          |
+| ct         | conflict choose theirs        |
+| cb         | conflict choose both          |
+| c0         | conflict choose none          |
 
-### :tools: additional commands
+### :wrench: additional commands
 
 | Shortcut   | Action                         |
 |------------|--------------------------------|
