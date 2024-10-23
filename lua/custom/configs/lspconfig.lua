@@ -53,7 +53,7 @@ lspconfig.gopls.setup {
   on_attach = custom_on_attach,
   capabilities = capabilities,
   cmd = { "gopls" },
-  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  filetypes = { "go", "gowork", "gotmpl" },
   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
   handlers = {
     ["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
