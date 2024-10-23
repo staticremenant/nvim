@@ -95,35 +95,6 @@ M.go = {
   },
 }
 
-M.goto_preview = {
-  n = {
-    ["gtd"] = {
-      function()
-        require('goto-preview').goto_preview_definition()
-      end,
-      desc = "Go To Definition"
-    },
-    ["gti"] = {
-      function()
-        require('goto-preview').goto_preview_implementation()
-      end,
-      desc = "Go To Implementation"
-    },
-    ["gtr"] = {
-      function()
-        require('goto-preview').goto_preview_references()
-      end,
-      desc = "Go To References"
-    },
-    ["gtq"] = {
-      function()
-        require('goto-preview').close_all_win()
-      end,
-      desc = "Close All Preview Windows"
-    },
-  },
-}
-
 M.nvterm = {
   plugin = true,
   n = {

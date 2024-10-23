@@ -121,6 +121,17 @@ local plugins = {
     end,
     init = function()
       require("core.utils").load_mappings("telescope")
+
+      vim.api.nvim_set_keymap('n', 'gtd', '<cmd>lua require("telescope.builtin").lsp_definitions()<CR>',
+        { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', 'gtD', '<cmd>lua require("telescope.builtin").lsp_declarations()<CR>',
+        { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', 'gti', '<cmd>lua require("telescope.builtin").lsp_implementations()<CR>',
+        { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', 'gtr', '<cmd>lua require("telescope.builtin").lsp_references()<CR>',
+        { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>tD', '<cmd>lua require("telescope.builtin").lsp_type_definitions()<CR>',
+        { noremap = true, silent = true })
     end,
   },
   {
@@ -144,12 +155,6 @@ local plugins = {
     end,
     event = { "CmdlineEnter" },
     build = ':lua require("go.install").update_all_sync()',
-  },
-  {
-    'rmagatti/goto-preview',
-    config = function()
-      require('custom.configs.goto-preview').setup()
-    end,
   },
   {
     require("custom.configs.quit").setup()
