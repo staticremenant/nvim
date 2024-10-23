@@ -42,7 +42,7 @@
 | cb         | choose both                   |
 | c0         | choose none                   |
 
-### :tools:additional commands
+### :tools: additional commands
 
 | Shortcut   | Action                         |
 |------------|--------------------------------|
