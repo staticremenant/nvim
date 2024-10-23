@@ -45,7 +45,8 @@
 
 ### :wrench: Additional commands/shortcuts
 
-| Shortcut     | Action                         |
-|--------------|--------------------------------|
-| `:Q`         | close all buffers/tabs/windows |
-| `<leader>th` | change color theme             |
+| Shortcut     | Action                                |
+|--------------|---------------------------------------|
+| `:Q`         | close all buffers/tabs/windows        |
+| `:QF`        | forced close all buffers/tabs/windows |
+| `<leader>th` | change color theme                    |

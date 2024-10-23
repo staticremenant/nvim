@@ -36,6 +36,7 @@ local plugins = {
         linehl = '',
         numhl = 'DapBreakpointColor',
       })
+      -- NEED FIX maybe
       -- vim.fn.sign_define('DapBreakpointRejected', {
       --   text = '󱂼',
       --   texthl = 'DapBreakpointRejectedColor',
@@ -75,7 +76,7 @@ local plugins = {
           {
             elements = {
               "repl",
-              -- "console",
+              "console",
             },
             size = 10,
             position = "bottom",
