@@ -42,7 +42,7 @@
 | cb         | conflict choose both          |
 | c0         | conflict choose none          |
 
-### :wrench: additional commands
+### :wrench: additional commands/shortcuts
 
 | Shortcut   | Action                         |
 |------------|--------------------------------|
