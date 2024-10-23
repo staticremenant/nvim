@@ -5,11 +5,11 @@
 | Shortcut   | Action                        |
 |------------|-------------------------------|
 | gtd        | go to definition              |
-| gtr        | go to reference               |
+| gtr        | go to references              |
 | gtD        | go to declaration             |
-| gti        | go to implementation          |
+| gti        | go to implementations         |
 | K          | lsp buf hover                 |
-| <leader>e  | diagnostic open float         |
+| <leader>e  | diagnostic open float window  |
 | <leader>ff | find files                    |
 | <leader>fw | find by word                  |
 | <leader>a  | harpoon add buffer            |
