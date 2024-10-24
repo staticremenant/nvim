@@ -5,9 +5,9 @@
 
 | Shortcut     | Action                        |
 |--------------|-------------------------------|
-| `gtd`|`gd`   | go to definition              |
+| `gtd`=`gd`   | go to definition              |
 | `gtr`        | go to references              |
-| `gtD`|`gD`   | go to declaration             |
+| `gtD`=`gD`   | go to declaration             |
 | `gti`        | go to implementations         |
 | `K`          | lsp buf hover                 |
 | `<leader>e`  | diagnostic open float window  |
