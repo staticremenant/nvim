@@ -179,13 +179,5 @@ local plugins = {
       )
     end
   },
-  {
-    'ThePrimeagen/harpoon',
-    requires = { 'nvim-lua/plenary.nvim' },
-    event = "BufEnter",
-    config = function()
-      require("custom.configs.harpoon").setup()
-    end
-  }
 }
 return plugins

@@ -13,10 +13,6 @@
 | `<leader>e`  | diagnostic open float window  |
 | `<leader>ff` | find files                    |
 | `<leader>fw` | find by word                  |
-| `<leader>a`  | harpoon add buffer            |
-| `<leader>m`  | harpoon menu                  |
-| `<leader>ca` | harpoon clear all buffers     |
-| `<leader>1-9`| harpoon go to buffer          |
 | `<leader>gf` | format imports                |
 | `<leader>h`  | toggle horizontal terminal    |
 | `C-n`        | toggle nvim-tree              |
