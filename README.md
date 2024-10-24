@@ -20,6 +20,8 @@
 | `<leader>gf` | format imports                |
 | `<leader>h`  | toggle horizontal terminal    |
 | `C-n`        | toggle nvim-tree              |
+| `<leader>rn` | nvchad renamer                |
+| `<leader>ca` | code action                   |
 
 ### :gear: Debug
 
