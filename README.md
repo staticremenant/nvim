@@ -1,6 +1,8 @@
 ## :key: Hotkeys config
 :warning: Not all hotkeys are listed here, but the most useful ones are.
 
+Press `<leader>ch` to open cheatsheet
+
 ### :mag_right: Code / Navigation
 
 | Shortcut     | Action                        |
@@ -48,6 +50,8 @@
 | `<leader>ph` | git preview hunk              |
 | `<leader>td` | git toggle deleted lines      |
 | `<leader>rh` | git reset hunk                |
+| `[h`         | git jump to previous hunk     |
+| `]h`         | git jump to next hunk         |
 
 ### :wrench: Additional commands/shortcuts
 

@@ -81,30 +81,4 @@ M.dap_go = {
   }
 }
 
-M.go = {
-  n = {
-    ["<leader>gf"] = {
-      function()
-        require("conform").format({
-          async = true,
-          formatters = { "goimports" },
-        })
-      end,
-      desc = "Go Format (goimports)"
-    },
-  },
-}
-
-M.nvterm = {
-  plugin = true,
-  n = {
-    ["<leader>h"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "Toggle horizontal terminal"
-    },
-  }
-}
-
 return M

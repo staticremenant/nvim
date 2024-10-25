@@ -16,8 +16,6 @@ vim.diagnostic.config({
   },
 })
 
-vim.api.nvim_set_keymap('n', '<Leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
-
 local custom_on_attach = function(client, bufnr)
   if client.server_capabilities.documentHighlightProvider then
     local group_name = "LspDocumentHighlight_" .. bufnr

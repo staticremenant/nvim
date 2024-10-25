@@ -118,29 +118,7 @@ local plugins = {
             theme = "ivy",
           }
         },
-        defaults = {
-          mappings = {
-            n = {
-              ["d"] = require("telescope.actions").delete_buffer,
-              ["q"] = require("telescope.actions").close,
-            },
-          },
-        },
       }
-    end,
-    init = function()
-      require("core.utils").load_mappings("telescope")
-
-      vim.api.nvim_set_keymap('n', 'gtd', '<cmd>lua require("telescope.builtin").lsp_definitions()<CR>',
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', 'gtD', '<cmd>lua require("telescope.builtin").lsp_declarations()<CR>',
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', 'gti', '<cmd>lua require("telescope.builtin").lsp_implementations()<CR>',
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', 'gtr', '<cmd>lua require("telescope.builtin").lsp_references()<CR>',
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>tD', '<cmd>lua require("telescope.builtin").lsp_type_definitions()<CR>',
-        { noremap = true, silent = true })
     end,
   },
   {
@@ -171,11 +149,11 @@ local plugins = {
   {
     'akinsho/git-conflict.nvim',
     version = "*",
-    event = "BufEnter",
+    event = "BufReadPost",
     config = function()
       require('git-conflict').setup(
         {
-          default_mappings = true,
+          default_mappings = false,
           default_commands = true,
           disable_diagnostics = false,
           list_opener = 'copen',

@@ -185,14 +185,14 @@ M.lspconfig = {
       "LSP code action",
     },
 
-    ["gr"] = {
-      function()
-        vim.lsp.buf.references()
-      end,
-      "LSP references",
-    },
+    -- ["gr"] = {
+    --   function()
+    --     vim.lsp.buf.references()
+    --   end,
+    --   "LSP references",
+    -- },
 
-    ["<leader>lf"] = {
+    ["<leader>e"] = {
       function()
         vim.diagnostic.open_float { border = "rounded" }
       end,
@@ -276,6 +276,10 @@ M.telescope = {
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
     ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+    ["gtd"] = { "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", "Go to LSP definitions" },
+    ["gtD"] = { "<cmd>lua require('telescope.builtin').lsp_declarations()<CR>", "Go to LSP declarations" },
+    ["gti"] = { "<cmd>lua require('telescope.builtin').lsp_implementations()<CR>", "Go to LSP implementations" },
+    ["gtr"] = { "<cmd>lua require('telescope.builtin').lsp_references()<CR>", "Go to LSP references" },
 
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits theme=ivy <CR>", "Git commits" },
@@ -288,6 +292,9 @@ M.telescope = {
     ["<leader>th"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
 
     ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
+
+    ["d"] = { "<cmd>lua require('telescope.actions').delete_buffer()<CR>", "Delete buffer" },
+    ["q"] = { "<cmd>lua require('telescope.actions').close()<CR>", "Close" },
   },
 }
 
@@ -296,21 +303,21 @@ M.nvterm = {
 
   t = {
     -- toggle in terminal mode
-    ["<A-i>"] = {
+    ["<C-i>"] = {
       function()
         require("nvterm.terminal").toggle "float"
       end,
       "Toggle floating term",
     },
 
-    ["<A-h>"] = {
+    ["<C-h>"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,
       "Toggle horizontal term",
     },
 
-    ["<A-v>"] = {
+    ["<C-v>"] = {
       function()
         require("nvterm.terminal").toggle "vertical"
       end,
@@ -320,21 +327,21 @@ M.nvterm = {
 
   n = {
     -- toggle in normal mode
-    ["<A-i>"] = {
+    ["<leader>i"] = {
       function()
         require("nvterm.terminal").toggle "float"
       end,
       "Toggle floating term",
     },
 
-    ["<A-h>"] = {
+    ["<leader>h"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,
       "Toggle horizontal term",
     },
 
-    ["<A-v>"] = {
+    ["<leader>v"] = {
       function()
         require("nvterm.terminal").toggle "vertical"
       end,
@@ -342,14 +349,14 @@ M.nvterm = {
     },
 
     -- new
-    ["<leader>h"] = {
+    ["<A-h>"] = {
       function()
         require("nvterm.terminal").new "horizontal"
       end,
       "New horizontal term",
     },
 
-    ["<leader>v"] = {
+    ["<A-v>"] = {
       function()
         require("nvterm.terminal").new "vertical"
       end,
@@ -405,10 +412,10 @@ M.gitsigns = {
 
   n = {
     -- Navigation through hunks
-    ["]c"] = {
+    ["]h"] = {
       function()
         if vim.wo.diff then
-          return "]c"
+          return "]h"
         end
         vim.schedule(function()
           require("gitsigns").next_hunk()
@@ -419,10 +426,10 @@ M.gitsigns = {
       opts = { expr = true },
     },
 
-    ["[c"] = {
+    ["[h"] = {
       function()
         if vim.wo.diff then
-          return "[c"
+          return "[h"
         end
         vim.schedule(function()
           require("gitsigns").prev_hunk()
@@ -461,6 +468,31 @@ M.gitsigns = {
       end,
       "Toggle deleted",
     },
+  },
+}
+
+M.go = {
+  n = {
+    ["<leader>gf"] = {
+      function()
+        require("conform").format({
+          async = true,
+          formatters = { "goimports" },
+        })
+      end,
+      "Go Format (goimports)",
+    },
+  },
+}
+
+M.git_conflict = {
+  n = {
+    ["<leader>co"] = { "<cmd>GitConflictChooseOurs<CR>", "Choose Ours" },
+    ["<leader>ct"] = { "<cmd>GitConflictChooseTheirs<CR>", "Choose Theirs" },
+    ["<leader>cb"] = { "<cmd>GitConflictChooseBoth<CR>", "Choose Both" },
+    ["<leader>c0"] = { "<cmd>GitConflictChooseNone<CR>", "Choose None" },
+    ["<leader>[x"] = { "<cmd>GitConflictListQf<CR>", "Move to next conflict" },
+    ["<leader>]x"] = { "<cmd>GitConflictListQf<CR>", "Move to previous conflict" },
   },
 }
 
