@@ -40,6 +40,7 @@
 | `ct`         | conflict choose theirs        |
 | `cb`         | conflict choose both          |
 | `c0`         | conflict choose none          |
+| `<leader>gb` | git blame line                |
 
 ### :wrench: Additional commands/shortcuts
 

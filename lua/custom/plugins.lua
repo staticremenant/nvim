@@ -118,6 +118,14 @@ local plugins = {
             theme = "ivy",
           }
         },
+        defaults = {
+          mappings = {
+            n = {
+              ["d"] = require("telescope.actions").delete_buffer,
+              ["q"] = require("telescope.actions").close,
+            },
+          },
+        },
       }
     end,
     init = function()
