@@ -14,6 +14,7 @@ Press `<leader>ch` to open cheatsheet
 | `K`          | lsp buf hover                 |
 | `<leader>e`  | diagnostic open float window  |
 | `<leader>ff` | find files                    |
+| `<leader>fa` | find all hidden files         |
 | `<leader>fw` | find by word                  |
 | `<leader>gf` | format imports                |
 | `<leader>h`  | toggle horizontal terminal    |
