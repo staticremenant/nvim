@@ -18,6 +18,10 @@
 | `C-n`        | toggle nvim-tree              |
 | `<leader>rn` | nvchad renamer                |
 | `<leader>ca` | code action                   |
+| `<leader>fz` | find in current buffer        |
+| `<leader>fb` | find buffers                  |
+| `d`          | delete buffer (in buf view)   |
+| `q`          | close telescop                |
 
 ### :gear: Debug
 
@@ -41,6 +45,9 @@
 | `cb`         | conflict choose both          |
 | `c0`         | conflict choose none          |
 | `<leader>gb` | git blame line                |
+| `<leader>ph` | git preview hunk              |
+| `<leader>td` | git toggle deleted lines      |
+| `<leader>rh` | git reset hunk                |
 
 ### :wrench: Additional commands/shortcuts
 
