@@ -57,6 +57,4 @@ Press `<leader>ch` to open cheatsheet
 
 | Shortcut     | Action                                |
 |--------------|---------------------------------------|
-| `:Q`         | close all buffers/tabs/windows        |
-| `:QF`        | forced close all buffers/tabs/windows |
 | `<leader>th` | change color theme                    |
