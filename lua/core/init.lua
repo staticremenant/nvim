@@ -103,7 +103,7 @@ autocmd("BufWritePost", {
     end
 
     require("base46").load_all_highlights()
-    -- vim.cmd("redraw!")
+    vim.cmd("redraw!")
   end,
 })
 
@@ -137,5 +137,5 @@ vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 local new_cmd = vim.api.nvim_create_user_command
 
 new_cmd("NvChadUpdate", function()
-  require "nvchad.updater"()
+  require "nvchad.updater" ()
 end, {})
