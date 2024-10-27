@@ -242,5 +242,8 @@ if #config.plugins > 0 then
   table.insert(default_plugins, { import = config.plugins })
 end
 
+vim.api.nvim_set_keymap('n', '<leader>b', ":lua require('custom.configs.telescope').custom_buffer()<CR>",
+  { noremap = true, silent = true })
+
 require("lazy").setup(default_plugins, config.lazy_nvim)
 require("base46").load_all_highlights()
