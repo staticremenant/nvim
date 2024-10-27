@@ -23,8 +23,7 @@ Press `<leader>ch` to open cheatsheet
 | `<leader>ca` | code action                   |
 | `<leader>fz` | find in current buffer        |
 | `<leader>fb` | find buffers                  |
-| `td`         | delete telscope buffer        |
-| `tq`         | close telescop                |
+| `d`          | delete telscope buffer        |
 
 ### :gear: Debug
 

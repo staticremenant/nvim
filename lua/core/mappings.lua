@@ -272,7 +272,7 @@ M.telescope = {
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true theme=ivy <CR>", "Find all hidden files" },
     ["<leader>ff"] = { "<cmd> Telescope find_files no_ignore=true theme=ivy <CR>", "Find files" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep theme=ivy <CR>", "Live grep" },
-    ["<leader>fb"] = { "<cmd> lua require('custom.configs.telescope').custom_buffer() <CR>", "Find buffers" },
+    ["<leader>fb"] = { "<cmd> lua require('custom.configs.telescope').custom_buffer() <CR>", "Find buffers ('d' for delete buffer)" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
     ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
@@ -292,14 +292,6 @@ M.telescope = {
     ["<leader>th"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
 
     ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
-
-    -- not working currently, left it here for cheatsheet
-    ["d"] = {
-      function(prompt_bufnr)
-        require("telescope.actions").delete_buffer(prompt_bufnr)
-      end,
-      "Delete buffer",
-    },
   },
 }
 
