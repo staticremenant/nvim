@@ -51,15 +51,27 @@ M.dap = {
     },
     ["<leader>dq"] = {
       function()
-        require('dap').terminate()
+        local dap = require('dap')
         local api = require('nvim-tree.api')
-        api.tree.close()
-        vim.defer_fn(function()
-          api.tree.open()
-        end, 50)
+        local dapui = require('dapui')
+
+        if dap.session() then
+          dap.terminate()
+          dapui.close()
+          vim.defer_fn(function()
+            api.tree.open()
+          end, 50)
+        else
+          dapui.close()
+          vim.defer_fn(function()
+            if not api.tree.is_visible() then
+              api.tree.open()
+            end
+          end, 50)
+        end
       end,
       "Terminate debugging"
-    }
+    },
   }
 }
 
