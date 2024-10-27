@@ -270,7 +270,7 @@ M.telescope = {
   n = {
     -- find
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true theme=ivy <CR>", "Find all hidden files" },
-    ["<leader>ff"] = { "<cmd> Telescope find_files no_ignore=true theme=ivy <CR>", "Find files" },
+    ["<leader>ff"] = { "<cmd> Telescope find_files theme=ivy <CR>", "Find files" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep theme=ivy <CR>", "Live grep" },
     ["<leader>fb"] = { "<cmd> lua require('custom.configs.telescope').custom_buffer() <CR>", "Find buffers ('d' for delete buffer)" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
