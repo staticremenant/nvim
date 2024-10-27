@@ -293,8 +293,8 @@ M.telescope = {
 
     ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
 
-    ["d"] = { "<cmd>lua require('telescope.actions').delete_buffer()<CR>", "Delete buffer" },
-    ["q"] = { "<cmd>lua require('telescope.actions').close()<CR>", "Close" },
+    ["td"] = { "<cmd>lua require('telescope.actions').delete_buffer()<CR>", "Delete buffer" },
+    ["tq"] = { "<cmd>lua require('telescope.actions').close()<CR>", "Close" },
   },
 }
 
