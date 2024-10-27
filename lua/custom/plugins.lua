@@ -144,9 +144,6 @@ local plugins = {
     build = ':lua require("go.install").update_all_sync()',
   },
   {
-    require("custom.configs.quit").setup()
-  },
-  {
     'akinsho/git-conflict.nvim',
     version = "*",
     event = "BufReadPost",
