@@ -32,6 +32,11 @@ Press `<leader>ch` to open cheatsheet and see all hotkeys.
 | `<leader>a`  | harpoon add file                    |
 | `<leader>m`  | harpoon menu                        |
 | `<leader>1-5`| harpoon jump to file                |
+| `<leader>xx` | toggle trouble for session          |
+| `<leader>xd` | toggle trouble for document         |
+| `<leader>xl` | toggle trouble location list        |
+| `<leader>xw` | toggle trouble for workspace        |
+| `<leader>xq` | toggle trouble quickfix list        |
 
 ### :gear: Debug
 
@@ -46,8 +51,13 @@ Press `<leader>ch` to open cheatsheet and see all hotkeys.
 
 | Shortcut     | Action                        |
 |--------------|-------------------------------|
-| `<leader>gt` | git status (changes)          |
+| `<leader>gt` | telescope git status (changes)|
 | `<leader>cm` | git commits                   |
+| `<leader>gs` | git status                    |
+| `<leader>gp` | git push                      |
+| `<leader>gc` | git commit                    |
+| `<leader>gl` | git pull                      |
+| `<leader>ga` | git add all                   |
 | `[x`         | conflict next                 |
 | `]x`         | conflict previous             |
 | `co`         | conflict choose ours          |
