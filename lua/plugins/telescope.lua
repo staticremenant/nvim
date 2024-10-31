@@ -41,6 +41,17 @@ return {
         defaults = themes.get_ivy({
           initial_mode = "insert",
           previewer = true,
+          vimgrep_arguments = {
+            "rg",
+            "-L",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+          },
+          path_display = { "tail" },
         }),
       })
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
