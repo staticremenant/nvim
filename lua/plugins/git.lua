@@ -35,7 +35,7 @@ return {
 
       vim.keymap.set("n", "<leader>rh", require("gitsigns").reset_hunk, {})
       vim.keymap.set("n", "<leader>td", require("gitsigns").toggle_deleted, {})
-      vim.keymap.set("n", "<leader>bl", require("gitsigns").blame_line, {})
+      vim.keymap.set("n", "<leader>gb", require("gitsigns").blame_line, {})
       vim.keymap.set("n", "<leader>ph", require("gitsigns").preview_hunk, {})
     end
   },

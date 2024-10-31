@@ -47,6 +47,8 @@ return {
       vim.keymap.set("n", "<leader>fw", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fb", custom_buffer, {})
       vim.keymap.set("n", "<leader>gt", "<cmd> Telescope git_status theme=ivy <CR>", {})
+      vim.keymap.set("n", "<leader>fz", "<cmd> Telescope current_buffer_fuzzy_find <CR>", {})
+
 
       require("telescope").load_extension("ui-select")
     end,
