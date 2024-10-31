@@ -57,8 +57,10 @@ return {
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
       vim.keymap.set("n", "<leader>fw", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fb", custom_buffer, {})
-      vim.keymap.set("n", "<leader>gt", "<cmd> Telescope git_status theme=ivy <CR>", {})
       vim.keymap.set("n", "<leader>fz", "<cmd> Telescope current_buffer_fuzzy_find <CR>", {})
+
+      vim.keymap.set("n", "<leader>cm", "<cmd> Telescope git_commits <CR>", {})
+      vim.keymap.set("n", "<leader>gt", "<cmd> Telescope git_status theme=ivy <CR>", {})
 
       vim.keymap.set("n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", {})
       vim.keymap.set("n", "gi", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", {})
