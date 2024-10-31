@@ -49,6 +49,9 @@ return {
       vim.keymap.set("n", "<leader>gt", "<cmd> Telescope git_status theme=ivy <CR>", {})
       vim.keymap.set("n", "<leader>fz", "<cmd> Telescope current_buffer_fuzzy_find <CR>", {})
 
+      vim.keymap.set("n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", {})
+      vim.keymap.set("n", "gi", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", {})
+      vim.keymap.set("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", {})
 
       require("telescope").load_extension("ui-select")
     end,
