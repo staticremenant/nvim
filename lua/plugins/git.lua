@@ -40,30 +40,15 @@ return {
     end
   },
   {
-    'akinsho/git-conflict.nvim',
-    version = "*",
-    event = "BufReadPost",
-    config = function()
-      require('git-conflict').setup({
-        default_mappings = true,
-        default_commands = true,
-        disable_diagnostics = false,
-        list_opener = 'copen',
-        highlights = {
-          incoming = 'DiffAdd',
-          current = 'DiffText',
-        }
-      })
-    end
-  },
-  {
     "tpope/vim-fugitive",
     config = function()
-      vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "Git Status" })
       vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { desc = "Git Commit" })
       vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { desc = "Git Push" })
       vim.keymap.set("n", "<leader>gl", ":Git pull<CR>", { desc = "Git Pull" })
       vim.keymap.set("n", "<leader>ga", ":Git add .<CR>", { desc = "Git Add all" })
+      vim.keymap.set("n", "<leader>gds", ":Gdiffsplit <CR>", { desc = "Git Diff Split" })
+      vim.keymap.set("n", "<leader>ggr", ":diffget //3 <CR>", { desc = "Git Get Right" })
+      vim.keymap.set("n", "<leader>ggl", ":diffget //2 <CR>", { desc = "Git Get Left" })
     end,
   },
 }

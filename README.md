@@ -51,13 +51,15 @@ Press `<leader>ch` to open cheatsheet and see all hotkeys.
 
 | Shortcut     | Action                        |
 |--------------|-------------------------------|
-| `<leader>gt` | telescope git status (changes)|
+| `<leader>gt` | telescope git status          |
 | `<leader>cm` | git commits                   |
-| `<leader>gs` | git status                    |
 | `<leader>gp` | git push                      |
 | `<leader>gc` | git commit                    |
 | `<leader>gl` | git pull                      |
 | `<leader>ga` | git add all                   |
+| `<leader>gds`| git diff split                |
+| `<leader>ggr`| git get right                 |
+| `<leader>ggl`| git get left                  |
 | `[x`         | conflict next                 |
 | `]x`         | conflict previous             |
 | `co`         | conflict choose ours          |
