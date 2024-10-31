@@ -18,6 +18,8 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
+vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>", { noremap = true, silent = true, desc = "Clear search highlight" })
+
 local signs = { Error = "", Warn = "▲", Hint = "⚑", Info = "ℹ" }
 
 for type, icon in pairs(signs) do
