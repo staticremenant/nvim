@@ -53,6 +53,12 @@ return {
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
           },
+          ["<Up>"] = function(fallback)
+            fallback()
+          end,
+          ["<Down>"] = function(fallback)
+            fallback()
+          end,
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
