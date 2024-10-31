@@ -72,3 +72,11 @@ Press `<leader>ch` to open cheatsheet and see all hotkeys.
 | `<leader>rh` | git reset hunk                |
 | `[h`         | git jump to previous hunk     |
 | `]h`         | git jump to next hunk         |
+
+### :wrench: Additional commands/shortcuts
+
+| Shortcut     | Action              |
+|--------------|---------------------|
+| `<leader>th` | change color theme  |
+| `<C-w>+-`    | vertical resize     |
+| `<C-w><>`    | horizontal resize   |

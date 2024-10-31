@@ -16,7 +16,10 @@ vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+vim.keymap.set("n", "<C-w>+", ":resize +2<CR>")
+vim.keymap.set("n", "<C-w>-", ":resize -2<CR>")
+vim.keymap.set("n", "<C-w>>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "<C-w><", ":vertical resize -2<CR>")
 
 vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>", { noremap = true, silent = true, desc = "Clear search highlight" })
 
