@@ -32,6 +32,8 @@ Press `<leader>ch` to open cheatsheet and see all hotkeys.
 | `<leader>a`  | harpoon add file                    |
 | `<leader>m`  | harpoon menu                        |
 | `<leader>1-5`| harpoon jump to file                |
+| `<leader>en` | jump to next error                  |
+| `<leader>ep` | jump to previous error              |
 
 ### :gear: Debug
 
