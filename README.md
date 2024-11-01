@@ -32,9 +32,6 @@ Press `<leader>ch` to open cheatsheet and see all hotkeys.
 | `<leader>a`  | harpoon add file                    |
 | `<leader>m`  | harpoon menu                        |
 | `<leader>1-5`| harpoon jump to file                |
-| `<leader>xx` | toggle trouble for session          |
-| `<leader>xb` | toggle trouble for current buffer   |
-| `<leader>xl` | toggle trouble location list        |
 
 ### :gear: Debug
 
