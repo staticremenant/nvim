@@ -34,5 +34,35 @@ return {
     vim.keymap.set("n", "<Leader>dq", dap.terminate, {})
 
     vim.keymap.set("n", "<Leader>du", dapui.toggle, {})
+
+    vim.api.nvim_set_hl(0, 'DapBreakpointColor', { fg = '#7FC7FF' })
+    vim.api.nvim_set_hl(0, 'DapStoppedColor', { fg = '#DCD0FF' })
+    vim.api.nvim_set_hl(0, 'DapBreakpointRejectedColor', { fg = '#FFE5B4' })
+
+    vim.fn.sign_define('DapBreakpoint', {
+      text = '',
+      texthl = 'DapBreakpointColor',
+      linehl = '',
+      numhl = 'DapBreakpointColor',
+    })
+    vim.fn.sign_define('DapStopped', {
+      text = '󰈈',
+      texthl = 'DapStoppedColor',
+      linehl = '',
+      numhl = 'DapStoppedColor',
+    })
+    vim.fn.sign_define('DapBreakpointRejected', {
+      text = '',
+      texthl = 'DapBreakpointColor',
+      linehl = '',
+      numhl = 'DapBreakpointColor',
+    })
+    -- NEED FIX maybe
+    -- vim.fn.sign_define('DapBreakpointRejected', {
+    --   text = '󱂼',
+    --   texthl = 'DapBreakpointRejectedColor',
+    --   linehl = '',
+    --   numhl = 'DapBreakpointRejectedColor',
+    -- })
   end,
 }
