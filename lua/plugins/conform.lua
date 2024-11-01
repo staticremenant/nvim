@@ -4,7 +4,7 @@ return {
     config = function()
       require("conform").setup({
         formatters_by_ft = {
-          go = { "gofmt", "goimports-reviser" },
+          go = { "gofmt", "goimports", "goimports-reviser" },
           lua = { "stylua" },
         },
 
