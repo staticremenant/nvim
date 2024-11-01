@@ -41,8 +41,8 @@ Press `<leader>ch` to open cheatsheet and see all hotkeys.
 | Shortcut      | Action                        |
 |---------------|-------------------------------|
 | `<leader>db`  | debug toggle breakpoint       |
-| `<leader>dsd` | debug start/continue          |
-| `<leader>dss` | debug show sidebar            |
+| `<leader>dc`  | debug start/continue          |
+| `<leader>du`  | debug show sidebar            |
 | `<leader>dq`  | debug quit                    |
 
 ### :octocat: Git
