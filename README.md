@@ -33,10 +33,8 @@ Press `<leader>ch` to open cheatsheet and see all hotkeys.
 | `<leader>m`  | harpoon menu                        |
 | `<leader>1-5`| harpoon jump to file                |
 | `<leader>xx` | toggle trouble for session          |
-| `<leader>xd` | toggle trouble for document         |
+| `<leader>xb` | toggle trouble for current buffer   |
 | `<leader>xl` | toggle trouble location list        |
-| `<leader>xw` | toggle trouble for workspace        |
-| `<leader>xq` | toggle trouble quickfix list        |
 
 ### :gear: Debug
 
