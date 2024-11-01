@@ -1,4 +1,3 @@
-
 ## :key: Hotkeys config
 :warning: Not all hotkeys are listed here, but the most useful ones are.
 
