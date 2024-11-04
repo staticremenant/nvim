@@ -24,15 +24,15 @@
 | `<C-i>`      | toggle float terminal (t mode)      |
 | `C-n`        | toggle file-tree                    |
 | `<leader>rn` | lsp rename                          |
-| `<leader>ca` | code action                         |
+| `<leader>ca` | code actions                        |
 | `<leader>fz` | find in current buffer              |
+| `<leader>ds` | document symbols (slow)             |
 | `<leader>fb` | find buffers                        |
-| `<leader>ds` | document symbols                    |
 | `d`          | delete telscope buffer              |
 | `<leader>u`  | toggle undotree                     |
 | `<leader>a`  | harpoon add file                    |
 | `<leader>m`  | harpoon menu                        |
-| `<leader>1-5`| harpoon jump to file                |
+| `<leader>1-5`| harpoon jump to saved buffer        |
 | `<leader>en` | jump to next error                  |
 | `<leader>ep` | jump to previous error              |
 
@@ -47,35 +47,28 @@
 
 ### :octocat: Git
 
-| Shortcut     | Action                        |
-|--------------|-------------------------------|
-| `<leader>gt` | telescope git status          |
-| `<leader>cm` | git commits                   |
-| `<leader>gp` | git push                      |
-| `<leader>gc` | git commit                    |
-| `<leader>gl` | git pull                      |
-| `<leader>ga` | git add all                   |
-| `<leader>gds`| git diff split                |
-| `<leader>ggr`| git get right                 |
-| `<leader>ggl`| git get left                  |
-| `[x`         | conflict next                 |
-| `]x`         | conflict previous             |
-| `co`         | conflict choose ours          |
-| `ct`         | conflict choose theirs        |
-| `cb`         | conflict choose both          |
-| `c0`         | conflict choose none          |
-| `<leader>gb` | git blame line                |
-| `<leader>ph` | git preview hunk              |
-| `<leader>td` | git toggle deleted lines      |
-| `<leader>rh` | git reset hunk                |
-| `[h`         | git jump to previous hunk     |
-| `]h`         | git jump to next hunk         |
+| Shortcut     | Action                             |
+|--------------|------------------------------------|
+| `<leader>gt` | telescope git status               |
+| `<leader>cm` | git commits list                   |
+| `<leader>gp` | git push                           |
+| `<leader>gc` | git commit changes                 |
+| `<leader>gl` | git pull                           |
+| `<leader>ga` | git add all changed files          |
+| `<leader>gds`| git diff split (resolve conflicts) |
+| `<leader>ggr`| git get right (conflict)           |
+| `<leader>ggl`| git get left (conflict)            |
+| `<leader>gb` | git blame line                     |
+| `<leader>ph` | git preview hunk                   |
+| `<leader>td` | git toggle deleted lines           |
+| `<leader>rh` | git reset hunk                     |
+| `[h`         | git jump to previous hunk          |
+| `]h`         | git jump to next hunk              |
 
 ### :wrench: Additional commands/shortcuts
 
-| Shortcut     | Action              |
-|--------------|---------------------|
-| `<leader>th` | change color theme  |
-| `<C-w>+-`    | vertical resize     |
-| `<C-w>,.`    | horizontal resize   |
-| `<leader>cp` | copy relative path  |
+| Shortcut     | Action                     |
+|--------------|----------------------------|
+| `<C-w>+-`    | vertical resize            |
+| `<C-w>,.`    | horizontal resize          |
+| `<leader>cp` | copy buffer relative path  |
