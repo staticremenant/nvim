@@ -26,7 +26,7 @@ Press `<leader>ch` to open cheatsheet and see all hotkeys.
 | `<leader>ca` | code action                         |
 | `<leader>fz` | find in current buffer              |
 | `<leader>fb` | find buffers                        |
-| `<leader>ds` | document symbol                     |
+| `<leader>ds` | document symbols                    |
 | `d`          | delete telscope buffer              |
 | `<leader>u`  | toggle undotree                     |
 | `<leader>a`  | harpoon add file                    |
