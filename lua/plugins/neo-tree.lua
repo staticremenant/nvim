@@ -9,6 +9,9 @@ return {
   config = function()
     require("neo-tree").setup({
       enable_git_status = true,
+      window = {
+        position = "float",
+      },
       filesystem = {
         use_libuv_file_watcher = true,
         follow_current_file = {

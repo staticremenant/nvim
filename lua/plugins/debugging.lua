@@ -2,6 +2,7 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    event = "BufRead",
     config = function()
       require("dapui").setup({
         layouts = {
@@ -48,6 +49,7 @@ return {
       "nvim-neotest/nvim-nio",
       "theHamsta/nvim-dap-virtual-text",
     },
+    event = "BufRead",
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")

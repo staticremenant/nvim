@@ -1,7 +1,7 @@
 return {
   {
     'mbbill/undotree',
-    event = "BufEnter",
+    event = "BufRead",
     config = function()
       vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", { desc = "Toggle undotree" })
     end

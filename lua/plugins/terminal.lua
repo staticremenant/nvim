@@ -1,6 +1,7 @@
 return {
   {
     "zbirenbaum/nvterm",
+    event = "BufEnter",
     config = function(_, opts)
       -- require "base46.term"
       opts.terminals = opts.terminals or {}
