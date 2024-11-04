@@ -6,7 +6,6 @@ local custom_buffer = function()
   builtin.buffers(themes.get_ivy({
     initial_mode = "normal",
     previewer = true,
-    sort_lastused = true,
     sort_mru = true,
     attach_mappings = function(prompt_bufnr, map)
       local delete_buf = function()
@@ -50,6 +49,7 @@ return {
       vim.keymap.set("n", "<leader>fw", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fb", custom_buffer, {})
       vim.keymap.set("n", "<leader>fz", "<cmd> Telescope current_buffer_fuzzy_find <CR>", {})
+      vim.keymap.set('n', '<leader>ds', '<cmd>Telescope lsp_document_symbols<CR>', {})
 
       vim.keymap.set("n", "<leader>cm", "<cmd> Telescope git_commits <CR>", {})
       vim.keymap.set("n", "<leader>gt", "<cmd> Telescope git_status theme=ivy <CR>", {})
