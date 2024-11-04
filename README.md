@@ -1,7 +1,8 @@
 ## :key: Hotkeys config
+
 :warning: Not all hotkeys are listed here, but the most useful ones are.
 
-Press `<leader>ch` to open cheatsheet and see all hotkeys.
+`leader` = `space`
 
 ### :mag_right: Code / Navigation
 
