@@ -72,3 +72,5 @@
 | `<C-w>+-`    | vertical resize            |
 | `<C-w>,.`    | horizontal resize          |
 | `<leader>cp` | copy buffer relative path  |
+| `<leader>ls` | load session for directory |
+| `<leader>qs` | don't save session on exit |

@@ -3,7 +3,6 @@ return {
     "zbirenbaum/nvterm",
     event = "BufEnter",
     config = function(_, opts)
-      -- require "base46.term"
       opts.terminals = opts.terminals or {}
       opts.terminals.type_opts = opts.terminals.type_opts or {}
       opts.terminals.type_opts.horizontal = opts.terminals.type_opts.horizontal or {}
