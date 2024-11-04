@@ -17,7 +17,7 @@
 | `<leader>ff` | find files                          |
 | `<leader>fa` | find all hidden files               |
 | `<leader>fw` | find by word                        |
-| `<leader>gf` | format imports                      |
+| `<leader>gf` | format code                         |
 | `<leader>h`  | toggle horizontal terminal          |
 | `<leader>i`  | toggle float terminal               |
 | `<C-h>`      | toggle horizontal terminal (t mode) |
