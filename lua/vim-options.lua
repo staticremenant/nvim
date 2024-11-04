@@ -32,3 +32,7 @@ end
 
 vim.keymap.set("n", "<leader>en", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 vim.keymap.set("n", "<leader>ep", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+vim.keymap.set('n', '<leader>cp', function()
+  vim.fn.setreg('+', vim.fn.expand('%:~:.'))
+  print("Relative path copied: " .. vim.fn.expand('%:~:.'))
+end, { desc = "Copy relative path to clipboard" })

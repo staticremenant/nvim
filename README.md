@@ -76,3 +76,4 @@ Press `<leader>ch` to open cheatsheet and see all hotkeys.
 | `<leader>th` | change color theme  |
 | `<C-w>+-`    | vertical resize     |
 | `<C-w>,.`    | horizontal resize   |
+| `<leader>cp` | copy relative path  |
