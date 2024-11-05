@@ -3,6 +3,8 @@ local echo_timer = nil
 local echo_timeout = 30
 local warning_hlgroup = 'WarningMsg'
 local error_hlgroup = 'ErrorMsg'
+local info_hlgroup = 'InfoMsg'
+local hint_hlgroup = 'HintMsg'
 local short_line_limit = 20
 
 local function echo_diagnostic()
@@ -19,7 +21,12 @@ local function echo_diagnostic()
         return
       end
 
-      local diags = vim.diagnostic.get(bufnr, { lnum = line, severity = { min = vim.diagnostic.severity.WARN } })
+      local diags = vim.diagnostic.get(bufnr, {
+        lnum = line,
+        -- severity = {
+        --   min = vim.diagnostic.severity.WARN,
+        -- },
+      })
 
       if #diags == 0 then
         if last_echo[1] then
@@ -53,6 +60,12 @@ local function echo_diagnostic()
       if diag.severity == vim.diagnostic.severity.ERROR then
         kind = 'error'
         hlgroup = error_hlgroup
+      elseif diag.severity == vim.diagnostic.severity.INFO then
+        kind = 'info'
+        hlgroup = info_hlgroup
+      elseif diag.severity == vim.diagnostic.severity.HINT then
+        kind = 'hint'
+        hlgroup = hint_hlgroup
       end
 
       local chunks = {
