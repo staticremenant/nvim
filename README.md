@@ -74,3 +74,5 @@
 | `<leader>cp` | copy buffer relative path          |
 | `<leader>ls` | load session for current directory |
 | `<leader>qs` | don't save session on exit         |
+| `<leader>pr` | show vim motion hints              |
+| `<leader>kys`| toggle hardtime                    |

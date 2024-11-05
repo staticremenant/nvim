@@ -5,6 +5,7 @@ return {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons",
     },
+
     event = "BufRead",
     config = function()
       require("nvim-navic").setup({
