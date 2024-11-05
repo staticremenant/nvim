@@ -50,7 +50,7 @@ return {
       vim.keymap.set("n", "<leader>gds", ":Gdiffsplit <CR>", { desc = "Git Diff Split" })
       vim.keymap.set("n", "<leader>ggr", ":diffget //3 <CR>", { desc = "Git Get Right" })
       vim.keymap.set("n", "<leader>ggl", ":diffget //2 <CR>", { desc = "Git Get Left" })
-      vim.keymap.set("n", "<leader>ggb", ":Git blame<CR>", { desc = "Git blame" })
+      vim.keymap.set("n", "<leader>ggb", ":Git blame<CR>", { desc = "Git Blame" })
     end,
   },
 }
