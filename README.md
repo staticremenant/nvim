@@ -59,6 +59,7 @@
 | `<leader>ggr`| git get right (conflict)           |
 | `<leader>ggl`| git get left (conflict)            |
 | `<leader>gb` | git blame line                     |
+| `<leader>ggb`| git blame buffer                   |
 | `<leader>ph` | git preview hunk                   |
 | `<leader>td` | git toggle deleted lines           |
 | `<leader>rh` | git reset hunk                     |
