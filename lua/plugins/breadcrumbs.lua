@@ -5,7 +5,6 @@ return {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons",
     },
-
     event = "BufRead",
     config = function()
       require("nvim-navic").setup({
@@ -13,7 +12,6 @@ return {
           auto_attach = true,
         },
       })
-
       require("barbecue").setup({
         show_modified = true,
         theme = "auto",
