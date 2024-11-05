@@ -43,7 +43,7 @@ return {
             "--column",
             "--smart-case",
           },
-          path_display = { "tail" },
+          path_display = { "smart" },
         }),
       })
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
