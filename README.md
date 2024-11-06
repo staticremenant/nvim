@@ -19,7 +19,7 @@
 | `<leader>fw` | find by word                                       |
 | `<C-k>`      | quote telescope prompt                             |
 | `<C-i>`      | quote telescope prompt with postfix " --iglob "    |
-| `<C-o>`      | quote telescope prompt with postfix " --iglob **/" |
+| `<C-o>`      | quote telescope prompt with search in dir postfix  |
 | `<leader>gf` | format code                                        |
 | `<leader>h`  | toggle horizontal terminal                         |
 | `<leader>i`  | toggle float terminal                              |

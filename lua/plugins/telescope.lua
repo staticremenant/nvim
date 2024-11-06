@@ -38,6 +38,17 @@ local function filename_first_smart(_, path)
   return string.format("%s\t\t%s", tail, relative_path)
 end
 
+local function quote_with_iglob()
+  local prompt_bufnr = vim.api.nvim_get_current_buf()
+
+  require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob **//**" })(prompt_bufnr)
+
+  local prompt_text = vim.api.nvim_buf_get_lines(prompt_bufnr, 0, 1, false)[1] or ""
+  local cursor_pos = #prompt_text - 3
+
+  vim.api.nvim_win_set_cursor(0, { 1, cursor_pos })
+end
+
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -53,7 +64,8 @@ return {
               i = {
                 ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
                 ["<C-i>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob " }),
-                ["<C-o>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob **/" }),
+                ["<C-o>"] = quote_with_iglob,
+                -- ["<C-o>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob **/" }),
               },
             },
           },
