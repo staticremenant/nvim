@@ -47,18 +47,8 @@ return {
     cmd = { "Telescope" },
     config = function()
       require("telescope").setup({
-        pickers = {
-          find_files = {
-            path_display = filenameFirst,
-          },
-          live_grep = {
-            path_display = filenameFirst,
-          },
-          buffers = {
-            path_display = filenameFirst,
-          },
-        },
         defaults = themes.get_ivy({
+          path_display = filenameFirst,
           initial_mode = "insert",
           previewer = true,
           vimgrep_arguments = {
