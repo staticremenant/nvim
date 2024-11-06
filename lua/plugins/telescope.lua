@@ -32,23 +32,28 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-local function filenameFirst(_, path)
+local function filename_first_smart(_, path)
   local tail = vim.fs.basename(path)
-  local parent = vim.fs.dirname(path)
-  if parent == "." then return tail end
-  return string.format("%s\t\t%s", tail, parent)
+  local relative_path = vim.fn.fnamemodify(path, ":~:.")
+  return string.format("%s\t\t%s", tail, relative_path)
 end
+
 
 return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-live-grep-args.nvim" },
     cmd = { "Telescope" },
     config = function()
       require("telescope").setup({
+        extensions = {
+          live_grep_args = {
+            auto_quoting = true,
+          },
+        },
         defaults = themes.get_ivy({
-          path_display = filenameFirst,
+          path_display = filename_first_smart,
           initial_mode = "insert",
           previewer = true,
           vimgrep_arguments = {
@@ -62,18 +67,20 @@ return {
           },
         }),
       })
+      require("telescope").load_extension("live_grep_args")
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
       vim.keymap.set("n", "<leader>fw", builtin.live_grep, {})
+      vim.keymap.set("n", "<leader>fw", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", {})
       vim.keymap.set("n", "<leader>fb", custom_buffer, {})
       vim.keymap.set("n", "<leader>fz", "<cmd> Telescope current_buffer_fuzzy_find <CR>", {})
-      vim.keymap.set('n', '<leader>ds', '<cmd>Telescope lsp_document_symbols<CR>', {})
+      vim.keymap.set('n', '<leader>ds', '<cmd> Telescope lsp_document_symbols<CR>', {})
 
       vim.keymap.set("n", "<leader>cm", "<cmd> Telescope git_commits <CR>", {})
       vim.keymap.set("n", "<leader>gt", "<cmd> Telescope git_status theme=ivy <CR>", {})
 
       vim.keymap.set("n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", {})
-      vim.keymap.set("n", "gi", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", {})
-      vim.keymap.set("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", {})
+      vim.keymap.set("n", "gi", "<cmd>lua require('telescope.builtin').lsp_implementations({ show_line=false })<CR>", {})
+      vim.keymap.set("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references({ show_line=false })<CR>", {})
     end,
   },
 }
