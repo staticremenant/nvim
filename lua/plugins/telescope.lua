@@ -38,7 +38,6 @@ local function filename_first_smart(_, path)
   return string.format("%s\t\t%s", tail, relative_path)
 end
 
-
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -50,6 +49,13 @@ return {
         extensions = {
           live_grep_args = {
             auto_quoting = true,
+            mappings = {
+              i = {
+                ["<C-q>"] = require("telescope-live-grep-args.actions").quote_prompt(),
+                ["<C-i>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob " }),
+                ["<C-d>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob **/" }),
+              },
+            },
           },
         },
         defaults = themes.get_ivy({
