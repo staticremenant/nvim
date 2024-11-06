@@ -22,6 +22,23 @@ local custom_buffer = function()
   }))
 end
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "TelescopeResults",
+  callback = function(ctx)
+    vim.api.nvim_buf_call(ctx.buf, function()
+      vim.fn.matchadd("TelescopeParent", "\t\t.*$")
+      vim.api.nvim_set_hl(0, "TelescopeParent", { link = "Comment" })
+    end)
+  end,
+})
+
+local function filenameFirst(_, path)
+  local tail = vim.fs.basename(path)
+  local parent = vim.fs.dirname(path)
+  if parent == "." then return tail end
+  return string.format("%s\t\t%s", tail, parent)
+end
+
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -30,20 +47,29 @@ return {
     cmd = { "Telescope" },
     config = function()
       require("telescope").setup({
+        pickers = {
+          find_files = {
+            path_display = filenameFirst,
+          },
+          live_grep = {
+            path_display = filenameFirst,
+          },
+          buffers = {
+            path_display = filenameFirst,
+          },
+        },
         defaults = themes.get_ivy({
           initial_mode = "insert",
           previewer = true,
           vimgrep_arguments = {
             "rg",
             "-L",
-            "--color=never",
             "--no-heading",
             "--with-filename",
             "--line-number",
             "--column",
             "--smart-case",
           },
-          path_display = { "smart" },
         }),
       })
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
