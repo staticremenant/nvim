@@ -35,6 +35,8 @@
 | `<leader>1-5`| harpoon jump to saved buffer        |
 | `<leader>en` | jump to next error                  |
 | `<leader>ep` | jump to previous error              |
+| `<leader>xw` | trouble error list for workspace    |
+| `<leader>xb` | trouble error list for buffer       |
 
 ### :gear: Debug
 
