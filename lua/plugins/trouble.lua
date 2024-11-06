@@ -8,8 +8,8 @@ return {
         use_diagnostic_signs = true,
       })
 
-      vim.keymap.set("n", "<leader>xw", "<cmd><cmd>Trouble diagnostics toggle<cr>", { desc = "Toggle Trouble" })
-      vim.keymap.set("n", "<leader>xb", "<cmd>Trouble diagnostics toggle focus=false filter.buf=0<cr>", {})
+      vim.keymap.set("n", "<leader>xw", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Toggle Trouble" })
+      vim.keymap.set("n", "<leader>xb", "<cmd>Trouble diagnostics toggle focus=false filter.buf=0<CR>", {})
     end,
   },
 }
