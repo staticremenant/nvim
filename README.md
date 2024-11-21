@@ -75,7 +75,7 @@
 
 | Shortcut     | Action                             |
 |--------------|------------------------------------|
-| `<C-w>+-`    | vertical resize                    |
+| `<C-w>=-`    | vertical resize                    |
 | `<C-w>,.`    | horizontal resize                  |
 | `<leader>cp` | copy buffer relative path          |
 | `<leader>ls` | load session for current directory |
