@@ -17,9 +17,12 @@
 | `<leader>ff` | find files                                         |
 | `<leader>fa` | find all hidden files                              |
 | `<leader>fw` | find by word                                       |
-| `<C-k>`      | quote telescope prompt                             |
+| `<C-k>`      | quote telescope prompt with postfix " --"          |
 | `<C-i>`      | quote telescope prompt with postfix " --iglob "    |
 | `<C-o>`      | quote telescope prompt with search in dir postfix  |
+| `<C-t>`      | quote telescope prompt with postfix " --type "     |
+| `<C-n>`      | quote telescope prompt with postfix " --type-not " |
+| `<C-h>`      | quote telescope prompt with postfix " --hidden "   |
 | `<leader>gf` | format code                                        |
 | `<leader>h`  | toggle horizontal terminal                         |
 | `<leader>i`  | toggle float terminal                              |

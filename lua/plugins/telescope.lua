@@ -59,14 +59,30 @@ return {
             auto_quoting = true,
             mappings = {
               i = {
-                ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
+                ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --" }),
                 ["<C-i>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob " }),
                 ["<C-o>"] = quote_with_iglob,
+                ["<C-t>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --type " }),
+                ["<C-n>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --type-not " }),
+                ["<C-h>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --hidden " }),
               },
             },
           },
         },
+        pickers = {
+          find_files = {
+            hidden = true,
+            no_ignore = true,
+          },
+          live_grep = {
+            additional_args = function()
+              return { "--hidden", "--no-ignore" }
+            end,
+          },
+        },
         defaults = themes.get_ivy({
+          hidden = true,
+          no_ignore = true,
           path_display = filename_first_smart,
           initial_mode = "insert",
           previewer = true,
