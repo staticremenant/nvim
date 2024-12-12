@@ -85,7 +85,6 @@ return {
       require("telescope").load_extension("live_grep_args")
 
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-      vim.keymap.set("n", "<leader>fw", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fw", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", {})
       vim.keymap.set("n", "<leader>fb", custom_buffer, {})
       vim.keymap.set("n", "<leader>fz", "<cmd> Telescope current_buffer_fuzzy_find <CR>", {})
