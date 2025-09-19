@@ -1,51 +1,3 @@
-local builtin = require('telescope.builtin')
-local action_state = require('telescope.actions.state')
-local themes = require('telescope.themes')
-
-local custom_buffer = function()
-  builtin.buffers(themes.get_ivy({
-    initial_mode = "normal",
-    previewer = true,
-    sort_mru = true,
-    attach_mappings = function(prompt_bufnr, map)
-      local delete_buf = function()
-        local current_picker = action_state.get_current_picker(prompt_bufnr)
-        current_picker:delete_selection(function(selection)
-          vim.api.nvim_buf_delete(selection.bufnr, { force = true })
-        end)
-      end
-
-      map('n', 'd', delete_buf)
-
-      return true
-    end,
-  }))
-end
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "TelescopeResults",
-  callback = function(ctx)
-    vim.api.nvim_buf_call(ctx.buf, function()
-      vim.fn.matchadd("TelescopeParent", "\t\t.*$")
-      vim.api.nvim_set_hl(0, "TelescopeParent", { link = "Comment" })
-    end)
-  end,
-})
-
-local function filename_first_smart(_, path)
-  local tail = vim.fs.basename(path)
-  local relative_path = vim.fn.fnamemodify(path, ":~:.")
-  return string.format("%s\t\t%s", tail, relative_path)
-end
-
-local function quote_with_iglob()
-  local prompt_bufnr = vim.api.nvim_get_current_buf()
-  require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob **//**" })(prompt_bufnr)
-  local prompt_text = vim.api.nvim_buf_get_lines(prompt_bufnr, 0, 1, false)[1] or ""
-  local cursor_pos = #prompt_text - 3
-  vim.api.nvim_win_set_cursor(0, { 1, cursor_pos })
-end
-
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -53,6 +5,54 @@ return {
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-live-grep-args.nvim" },
     cmd = { "Telescope" },
     config = function()
+      local builtin = require('telescope.builtin')
+      local action_state = require('telescope.actions.state')
+      local themes = require('telescope.themes')
+
+      local custom_buffer = function()
+        builtin.buffers(themes.get_ivy({
+          initial_mode = "normal",
+          previewer = true,
+          sort_mru = true,
+          attach_mappings = function(prompt_bufnr, map)
+            local delete_buf = function()
+              local current_picker = action_state.get_current_picker(prompt_bufnr)
+              current_picker:delete_selection(function(selection)
+                vim.api.nvim_buf_delete(selection.bufnr, { force = true })
+              end)
+            end
+
+            map('n', 'd', delete_buf)
+
+            return true
+          end,
+        }))
+      end
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "TelescopeResults",
+        callback = function(ctx)
+          vim.api.nvim_buf_call(ctx.buf, function()
+            vim.fn.matchadd("TelescopeParent", "\t\t.*$")
+            vim.api.nvim_set_hl(0, "TelescopeParent", { link = "Comment" })
+          end)
+        end,
+      })
+
+      local function filename_first_smart(_, path)
+        local tail = vim.fs.basename(path)
+        local relative_path = vim.fn.fnamemodify(path, ":~:.")
+        return string.format("%s\t\t%s", tail, relative_path)
+      end
+
+      local function quote_with_iglob()
+        local prompt_bufnr = vim.api.nvim_get_current_buf()
+        require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob **//**" })(prompt_bufnr)
+        local prompt_text = vim.api.nvim_buf_get_lines(prompt_bufnr, 0, 1, false)[1] or ""
+        local cursor_pos = #prompt_text - 3
+        vim.api.nvim_win_set_cursor(0, { 1, cursor_pos })
+      end
+
       require("telescope").setup({
         extensions = {
           live_grep_args = {
