@@ -10,8 +10,32 @@ return {
     "williamboman/mason-lspconfig.nvim",
     event = "VeryLazy",
     opts = {
-      auto_install = true,
+      ensure_installed = { "lua_ls", "gopls" },
+      automatic_installation = true,
     },
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    event = "VeryLazy",
+    dependencies = { "williamboman/mason.nvim" },
+    config = function()
+      require("mason-tool-installer").setup({
+        ensure_installed = {
+          -- lSP
+          "lua-language-server",
+          "gopls",
+
+          -- formatters/linters
+          "stylua",
+          "golangci-lint",
+
+          -- tools for telescope
+          "ripgrep",
+          "fd",
+        },
+        run_on_start = true,
+      })
+    end,
   },
   {
     "neovim/nvim-lspconfig",

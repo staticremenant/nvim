@@ -3,7 +3,6 @@ return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-live-grep-args.nvim" },
-    cmd = { "Telescope" },
     config = function()
       local builtin = require('telescope.builtin')
       local action_state = require('telescope.actions.state')
